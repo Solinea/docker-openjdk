@@ -9,12 +9,13 @@ env:
 before_install:
   - gem install bundler
   - bundle install
+before_install:
+  - docker login -e="${DOCKER_EMAIL}" -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${DOCKER_REGISTRY_COM}"
 install:
   - docker build -t "${NAME}" .
 before_deploy:
   - docker login -e="${DOCKER_EMAIL}" -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${DOCKER_REGISTRY}"
   - docker login -e="${DOCKER_EMAIL}" -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${DOCKER_REGISTRY_DEV}"
-  - docker login -e="${DOCKER_EMAIL}" -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}" "${DOCKER_REGISTRY_COM}"
 deploy:
   - provider: script
     script: scripts/push-artifactory.sh
