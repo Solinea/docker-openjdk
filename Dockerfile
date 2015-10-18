@@ -7,7 +7,7 @@ MAINTAINER Luke Heidecke <luke@solinea.com>
 ENV JAVA_MAJOR_VER 8
 
 RUN pkgList=' \
-    openjdk-${JAVA_MAJOR_VER}-jre \
+    openjdk-$JAVA_MAJOR_VER-jre \
   ' \
   && apt-get update -y -q -q \
   && apt-get install --no-install-recommends -y -q $pkgList \
