@@ -5,7 +5,7 @@ FROM solinea-docker-community.artifactoryonline.com/debian:jessie
 MAINTAINER Luke Heidecke <luke@solinea.com>
 
 RUN pkgList=' \
-    openjdk-7-jre \
+    openjdk-7-jre-headless \
   ' \
   && apt-get update -y -q -q \
   && apt-get install --no-install-recommends -y -q $pkgList \
