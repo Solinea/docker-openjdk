@@ -1,6 +1,6 @@
 # vim:set ft=dockerfile:
 
-FROM solinea-docker-community.artifactoryonline.com/debian:jessie
+FROM solinea/debian:jessie
 
 MAINTAINER Luke Heidecke <luke@solinea.com>
 
